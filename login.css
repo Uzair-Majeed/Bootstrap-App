@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('./fonts/BricolageGrotesque.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.login-btn {
+  background: linear-gradient(to right, #C20001, #5C0000);
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.login-eye-button {
+  cursor: pointer;
+}
+
+.login-checkbox {
+  border: 2px solid #C20001;
+}
+
+.login-checkbox:checked {
+  background-color: #C20001;
+  border-color: #C20001;
+}
+
+.login-social-icon {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.login-divider-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #FF5315, transparent);
+  opacity: 0.5;
+}
+
+.login-eye-icon-inside {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #6c757d;
+}

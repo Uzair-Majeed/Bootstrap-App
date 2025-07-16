@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('./fonts/BricolageGrotesque.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  background: #000;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.screen.active-screen {
+  transform: translateX(0%);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+#screen1 {
+  background: linear-gradient(to bottom, #C20001, #5C0000);
+  color: white;
+}
+
+#screen2 {
+  background: linear-gradient(to bottom, #FF4400, #992900);
+  color: white;
+}
+
+#screen3 {
+  background: linear-gradient(to bottom, #F5F5DB, #8F8F80);
+  color: white;
+}
+
+.indicator {
+  width: 50px;
+  height: 2px;
+  background-color: white;
+  opacity: 0.4;
+  border-radius: 4px;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
+.fade-bottom {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+

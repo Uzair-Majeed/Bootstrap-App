@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('./fonts/BricolageGrotesque.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.basicinfo-heading {
+  font-size: 1.6rem;
+}
+
+.save-btn {
+  background: linear-gradient(to right, #C20001, #5C0000);
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.upload-btn {
+  border: 2px solid white;
+  cursor: pointer;
+}

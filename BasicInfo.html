@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basic Info - BeWhoop</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="BasicInfo.css">
+</head>
+<body class="bg-white d-flex justify-content-center align-items-center min-vh-100">
+
+<div class="container px-4 py-3" style="max-width: 400px;">
+  <h1 class="text-center fw-bold mb-1 basicinfo-heading">You’re the Main Character!</h1>
+  <p class="text-center text-muted mb-4">Tell us a bit about yourself</p>
+
+  <div class="text-center mb-4 position-relative">
+    <label for="imageUpload" class="d-inline-block position-relative">
+      <img id="profileImage" src="./icons/DefaultImg.png" alt="Avatar" class="rounded-circle border border-3" style="width: 120px; height: 120px; object-fit: cover;">
+    </label>
+    <input type="file" id="imageUpload" accept="image/*" hidden>
+  </div>
+
+  <form id="basicInfoForm">
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input type="text" id="nameInput" class="form-control" placeholder="Full Name" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Date of Birth</label>
+      <input type="date" id="dobInput" class="form-control form-control-sm w-100" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label">Gender</label>
+      <select id="genderInput" class="form-select form-select-sm w-100" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn w-100 save-btn btn-danger rounded-pill">Save</button>
+  </form>
+</div>
+
+<!-- Toasts -->
+<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
+  <div id="errorToast" class="toast bg-danger text-white text-center" role="alert">
+    <div class="toast-body">
+      Please fill all fields and upload your image!
+    </div>
+  </div>
+</div>
+
+<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
+  <div id="successToast" class="toast bg-success text-white text-center" role="alert">
+    <div class="toast-body">
+      Saved Successfully!
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const form = document.getElementById('basicInfoForm');
+  const errorToast = new bootstrap.Toast(document.getElementById('errorToast'), {
+  delay: 2000,
+  autohide: true
+});
+
+const successToast = new bootstrap.Toast(document.getElementById('successToast'), {
+  delay: 2000,
+  autohide: true
+});
+  const imageUpload = document.getElementById('imageUpload');
+  const profileImage = document.getElementById('profileImage');
+  const defaultImageSrc = './icons/DefaultImg.png';
+
+  let imageUploaded = false;
+
+  imageUpload.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      imageUploaded = true;
+      profileImage.src = URL.createObjectURL(file);
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    const name = document.getElementById('nameInput').value.trim();
+    const dob = document.getElementById('dobInput').value;
+    const gender = document.getElementById('genderInput').value;
+
+    if (!name || !dob || !gender || !imageUploaded) {
+      e.preventDefault();
+      errorToast.show();
+    } else {
+      e.preventDefault();
+      successToast.show();
+    }
+  });
+</script>
+
+</body>
+</html>
