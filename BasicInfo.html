@@ -73,7 +73,7 @@
 });
 
 const successToast = new bootstrap.Toast(document.getElementById('successToast'), {
-  delay: 2000,
+  delay: 1500,
   autohide: true
 });
   const imageUpload = document.getElementById('imageUpload');
@@ -100,7 +100,11 @@ const successToast = new bootstrap.Toast(document.getElementById('successToast')
       errorToast.show();
     } else {
       e.preventDefault();
-      successToast.show();
+      successToast.show()
+      setTimeout(
+
+      window.location.href='Explore.html',2000
+      );
     }
   });
 </script>

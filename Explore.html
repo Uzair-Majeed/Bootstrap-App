@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Events</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="Explore.css">
+</head>
+<body>
+  <div class="container-fluid min-vh-100 d-flex flex-column">
+    <div class="flex-grow-1 overflow-auto px-3 pt-4 pb-5">
+      <h5>Hello Kamil 👋</h5>
+      <div class="d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Let's find event near you</h4>
+        <a href='Chats.html'class="btn p-0"><i class="bi bi-chat-dots fs-4" style="color: #C20001"></i></a>
+      </div>
+
+      <!-- Event Card -->
+      <div class="card mt-3 event-card text-white">
+        <div class="position-relative">
+          <img src="/icons/post_Img.png" class="img-fluid w-100 event-img" alt="Tomorrowland Event" />
+          <div class="event-date text-center">
+            <strong>25</strong><br />May
+          </div>
+          <div class="overlay-content p-3">
+           <div onClick="showEventDetailModal()">
+  <h5 class="card-title mb-1">Tomorrowland</h5>
+  <p class="card-text small">Lake View Park, Islamabad</p>
+</div>
+
+
+            <div class="event-actions">
+              <button onclick="likeEvent(this)"><i class="bi bi-heart"></i></button>
+              <button data-bs-toggle="modal" data-bs-target="#commentsModal"><i class="bi bi-chat-dots"></i></button>
+              <button><i class="bi bi-send"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplicate Event Card -->
+      <div class="card mt-3 event-card text-white">
+        <div class="position-relative">
+          <img src="/icons/post_Img.png" class="img-fluid w-100 event-img" alt="Tomorrowland Event" />
+          <div class="event-date text-center">
+            <strong>25</strong><br />May
+          </div>
+          <div class="overlay-content p-3">
+            <div onClick="showEventDetailModal()">
+  <h5 class="card-title mb-1">Tomorrowland</h5>
+  <p class="card-text small">Lake View Park, Islamabad</p>
+</div>
+
+            <div class="event-actions">
+              <button onclick="likeEvent(this)"><i class="bi bi-heart"></i></button>
+              <button data-bs-toggle="modal" data-bs-target="#commentsModal"><i class="bi bi-chat-dots"></i></button>
+              <button><i class="bi bi-send"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comments Modal -->
+  <div class="modal fade comments-modal" id="commentsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-70 modal-slide-up draggable-modal m-0">
+      <div class="modal-content glass-bg border-0 rounded-top-4 h-100">
+        <div class="modal-handle"></div>
+        <div class="modal-header border-0 pt-2">
+          <h5 class="modal-title">Comments</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body overflow-auto">
+          <div class="comment-item d-flex align-items-start pb-3 mb-3 border-bottom">
+            <img src="https://i.pravatar.cc/40?img=1" class="avatar me-2" />
+            <div class="w-100">
+              <strong>Ayesha</strong> <small class="text-muted">3 min ago</small>
+              <p class="mb-1">Can’t wait for the rooftop jam tonight! Who else is coming?</p>
+              <button onclick="likeComment(this)" class="btn p-0">
+                <i class="bi bi-heart"></i>
+              </button>
+              <small class="text-muted ms-1">24</small>
+            </div>
+          </div>
+          <div class="comment-item d-flex align-items-start pb-3 mb-3 border-bottom">
+            <img src="https://i.pravatar.cc/40?img=2" class="avatar me-2" />
+            <div class="w-100">
+              <strong>Zara</strong> <small class="text-muted">5 min ago</small>
+              <p class="mb-1">Ready for the event! Who else is coming?</p>
+              <button onclick="likeComment(this)" class="btn p-0">
+                <i class="bi bi-heart"></i>
+              </button>
+              <small class="text-muted ms-1">3</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Ticket Modal --><div class="modal fade" id="eventDetailModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-70 modal-slide-up draggable-modal m-0">
+    <div class="modal-content glass-bg border-0 rounded-top-4 h-100 p-3 px-4">
+      <div class="modal-handle"></div>
+      <div class="modal-body overflow-auto">
+
+        <!-- Title + People Joined -->
+        <div class="text-center mb-4">
+          <h4 class="fw-bold mb-1">Tomorrowland</h4>
+          <p class="text-muted small mb-2">
+            <span class="text-danger fw-bold">983</span> people have joined
+          <a href="#" class="text-decoration-none text-danger small">View All</a>
+          </p>
+        </div>
+
+        <!-- Description with Read More -->
+        <p id="event-description" class="small text-muted mb-4">
+          Step into a world of music, magic, and unforgettable memories! Join thousands of dreamers at Tomorrowland Pakistan 2025, where global DJs 
+          <span id="dots">...</span>
+          <span id="more" style="display: none;">
+            light up the night with spectacular performances. Experience electrifying visuals, immersive stages, and a vibe like no other. Dance under the stars and be part of something legendary.
+          </span>
+          <a href="javascript:void(0);" class="text-danger fw-semibold" id="readMoreBtn" onclick="toggleReadMore()">Read More</a>
+        </p>
+
+        <!-- Tickets -->
+        <div class="bg-light rounded-3 p-3 my-3">
+          <h5 class="mb-1" style="color: black;"><strong>Tickets</strong></h5>
+          <p class="mb-0" style="color: #C20001;">PKR 1500 - 5000</p>
+        </div>
+
+        <!-- Location -->
+        <div class="bg-light rounded-3 p-3 my-3">
+          <h5 class="mb-1" style="color: black;"><strong>Location</strong></h5>
+          <p class="mb-0" style="color: #C20001;">Lake View Park, Islamabad</p>
+        </div>
+
+        <!-- Date & Time -->
+        <div class="bg-light rounded-3 p-3 my-3">
+          <h5 class="mb-1" style="color: black;"><strong>Date & Time</strong></h5>
+          <p class="mb-0" style="color: #C20001;">May 16, 2025 – 7:30 PM to 10:30 PM</p>
+        </div>
+
+        <!-- Button -->
+        <div class="d-grid mt-4">
+          <button class="btn btn-danger rounded-pill py-2">Buy Ticket</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Bottom Navigation -->
+  <nav class="navbar navbar-light bg-white border-top fixed-bottom">
+    <div class="container-fluid d-flex justify-content-around py-1">
+      <a href="Explore.html" class="text-center text-danger">
+        <i class="bi bi-compass fs-4"></i><br />
+      </a>
+      <a href="#" class="text-center text-dark">
+        <i class="bi bi-bell fs-4"></i><br />
+      </a>
+      <a href="#" class="text-center text-dark">
+        <i class="bi bi-gear fs-4"></i><br />
+      </a>
+      <a href="#" class="text-center text-dark">
+        <i class="bi bi-person fs-4"></i><br />
+      </a>
+    </div>
+  </nav>
+
+  <!-- Script -->
+  <script>
+    function likeEvent(btn) {
+      const icon = btn.querySelector('i');
+      icon.classList.toggle('bi-heart');
+      icon.classList.toggle('bi-heart-fill');
+      icon.classList.toggle('text-danger');
+    }
+
+    function likeComment(btn) {
+      const icon = btn.querySelector('i');
+      const countEl = btn.nextElementSibling;
+      const isLiked = icon.classList.toggle('bi-heart-fill');
+      icon.classList.toggle('bi-heart', !isLiked);
+      icon.classList.toggle('text-danger', isLiked);
+      const count = parseInt(countEl.textContent);
+      countEl.textContent = isLiked ? count + 1 : count - 1;
+    }
+
+  function toggleReadMore() {
+    const dots = document.getElementById("dots");
+    const moreText = document.getElementById("more");
+    const btn = document.getElementById("readMoreBtn");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      moreText.style.display = "none";
+      btn.textContent = "Read More";
+    } else {
+      dots.style.display = "none";
+      moreText.style.display = "inline";
+      btn.textContent = "Read Less";
+    }
+  }
+
+  function showEventDetailModal() {
+  const eventDetailModal = new bootstrap.Modal(document.getElementById('eventDetailModal'));
+  eventDetailModal.show();
+}
+
+(() => {
+  const dialogEl = document.querySelector('#eventDetailModal .draggable-modal');
+  const contentEl = dialogEl.querySelector('.modal-content');
+  const modal = document.getElementById('eventDetailModal');
+
+  let startY = 0, deltaY = 0, isDragging = false;
+
+  contentEl.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) return;
+    startY = e.touches[0].clientY;
+    deltaY = 0;
+    isDragging = true;
+    contentEl.style.transition = 'none';
+  });
+
+  contentEl.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    deltaY = e.touches[0].clientY - startY;
+    if (deltaY > 0) contentEl.style.transform = `translateY(${deltaY}px)`;
+  });
+
+  contentEl.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    contentEl.style.transition = 'transform 0.3s ease-out';
+    if (deltaY > 100) {
+      contentEl.style.transform = `translateY(100%)`;
+      setTimeout(() => bootstrap.Modal.getInstance(modal)?.hide(), 300);
+    } else {
+      contentEl.style.transform = `translateY(0%)`;
+    }
+  });
+
+  modal.addEventListener('hidden.bs.modal', () => {
+    contentEl.style.transition = 'none';
+    contentEl.style.transform = 'translateY(100%)';
+  });
+
+  modal.addEventListener('shown.bs.modal', () => {
+    requestAnimationFrame(() => {
+      contentEl.style.transition = 'transform 0.3s ease-out';
+      contentEl.style.transform = 'translateY(0%)';
+    });
+  });
+})();
+
+    (() => {
+      const dialogEl = document.querySelector('.draggable-modal');
+      const contentEl = dialogEl.querySelector('.modal-content');
+      const modal = document.getElementById('commentsModal');
+
+      let startY = 0, deltaY = 0, isDragging = false;
+
+      contentEl.addEventListener('touchstart', e => {
+        if (e.touches.length !== 1) return;
+        startY = e.touches[0].clientY;
+        deltaY = 0;
+        isDragging = true;
+        contentEl.style.transition = 'none';
+      });
+
+      contentEl.addEventListener('touchmove', e => {
+        if (!isDragging) return;
+        deltaY = e.touches[0].clientY - startY;
+        if (deltaY > 0) contentEl.style.transform = `translateY(${deltaY}px)`;
+      });
+
+      contentEl.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        contentEl.style.transition = 'transform 0.3s ease-out';
+        if (deltaY > 100) {
+          contentEl.style.transform = `translateY(100%)`;
+          setTimeout(() => bootstrap.Modal.getInstance(modal)?.hide(), 300);
+        } else {
+          contentEl.style.transform = `translateY(0%)`;
+        }
+      });
+
+      modal.addEventListener('hidden.bs.modal', () => {
+        contentEl.style.transition = 'none';
+        contentEl.style.transform = 'translateY(100%)';
+      });
+
+      modal.addEventListener('shown.bs.modal', () => {
+        requestAnimationFrame(() => {
+          contentEl.style.transition = 'transform 0.3s ease-out';
+          contentEl.style.transform = 'translateY(0%)';
+        });
+      });
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
