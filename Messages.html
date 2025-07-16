@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Messages.css" />
+</head>
+<body>
+  <div class="message-screen d-flex flex-column">
+
+    <!-- Top Header -->
+    <div class="bg-black text-white px-3 py-3 d-flex align-items-center">
+      <button class="btn btn-light btn-sm me-2 rounded-2" onclick="goBack()">
+        <i class="bi bi-arrow-left text-dark"></i>
+      </button>
+      <img src="/icons/placeholder_4.png" alt="User" class="chat-avatar me-2 rounded-circle border border-light" />
+      <div>
+        <h6 class="mb-0">Rooftop Jam Crew</h6>
+        <small class="fw-light text-white-50">Online now</small>
+      </div>
+    </div>
+
+    <!-- Chat Body -->
+    <div class="chat-body flex-grow-1 overflow-auto px-3 py-3" id="chatBody">
+
+      <!-- Incoming Message -->
+      <div class="message incoming d-flex align-items-start mb-3">
+        <img src="/icons/placeholder_1.png" alt="User" class="rounded-circle me-2" width="45" height="45">
+        <div>
+            <div class="bubble text-dark px-3 py-2 rounded-3" style="background-color: #ECF0E2;">
+            Can't wait to jam tonight! 🎸🎶
+          </div>
+          <small class="timestamp d-block">4:10 PM - Usman</small>
+        </div>
+      </div>
+
+      <!-- Outgoing Message -->
+      <div class="d-flex justify-content-end mb-3">
+        <div class="message outgoing d-flex flex-row-reverse align-items-start">
+          <img src="/icons/placeholder_2.png" alt="User" class="rounded-circle ms-2" width="45" height="45">
+          <div class="d-flex flex-column align-items-end">
+            <div class="bubble px-3 py-2 rounded-3" style="background-color: #FFE9E0; color: #661B00;">
+              Same! Bringing my keyboard 🎹
+            </div>
+            <small class="timestamp">4:12 PM - Ayesha</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input px-3 py-2 bg-white border-top">
+      <div class="input-group align-items-center">
+        <button class="btn btn-danger me-2" type="button" title="Record Voice">
+          <i class="bi bi-mic-fill text-white"></i>
+        </button>
+        <input type="text" class="form-control" id="messageInput" placeholder="Message..." />
+        <button class="btn btn-danger ms-2" type="button" onclick="sendMessage()">
+          <i class="bi bi-send text-white"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'Chats.html';
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('messageInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const chatBody = document.getElementById('chatBody');
+      const msgHTML = `
+        <div class="d-flex justify-content-end mb-3">
+          <div class="message outgoing d-flex flex-row-reverse align-items-start">
+            <img src="/icons/placeholder_2.png" alt="User" class="rounded-circle ms-2" width="45" height="45">
+            <div class="d-flex flex-column align-items-end">
+            <div class="bubble px-3 py-2 rounded-3" style="background-color: #FFE9E0; color: #661B00;">
+                ${text}
+              </div>
+              <small class="timestamp">Now</small>
+            </div>
+          </div>
+        </div>
+      `;
+      chatBody.insertAdjacentHTML('beforeend', msgHTML);
+      input.value = '';
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+  </script>
+</body>
+</html>

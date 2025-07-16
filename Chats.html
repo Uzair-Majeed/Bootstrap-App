@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chats</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="chats.css" />
+</head>
+<body>
+  <!-- Chat List Screen -->
+  <div class="chat-screen" id="chatList">
+    
+    <div class="bg-black text-white pb-2">
+  <!-- Top Header -->
+  <div class="d-flex align-items-center px-3 pt-3">
+    <button class="btn btn-light btn-sm me-2 rounded-2" onClick="backButton()">
+      <i class="bi bi-arrow-left text-dark"></i>
+    </button>
+    <div>
+      <h5 class="mb-0">Connect Deeper</h5>
+      <small class="fw-light" style="font-size: 0.75rem;">Chat, view stories, and connect</small>
+    </div>
+  </div>
+
+  <!-- Stories Bar -->
+  <div class="d-flex px-3 pt-3 pb-2 story-bar align-items-center">
+    <div class="me-3 text-center">
+      <div class="story-avatar add-story bg-dark border border-secondary">
+        <i class="bi bi-plus-lg text-white"></i>
+      </div>
+      <small class="d-block mt-1 text-white-50">Add Story</small>
+    </div>
+
+    <div class="me-3 text-center">
+      <img src="/icons/placeholder_1.png" alt="User" class="chat-avatar rounded-circle border border-white" />
+      <small class="d-block mt-1 text-white-50">Usman K.</small>
+    </div>
+
+    <div class="me-3 text-center">
+      <img src="/icons/placeholder_2.png" alt="User" class="chat-avatar rounded-circle border border-white" />
+      <small class="d-block mt-1 text-white-50">Ayesha</small>
+    </div>
+
+    <div class="me-3 text-center">
+      <img src="/icons/placeholder_3.png" alt="User" class="chat-avatar rounded-circle border border-white" />
+      <small class="d-block mt-1 text-white-50">Rahim</small>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Tabs (underline below) -->
+     <div class="tab-indicator w-25 mx-auto mt-1 mb-2"></div>
+
+
+
+    <!-- Recent Chats --><!-- Scrollable container -->
+    <div class="chat-scroll-area bg-white rounded-top-4 px-3 py-3 pb-5">
+        
+      <h5 class="mb-0">Recent Chats</h5>
+      <div class="chat-item d-flex justify-content-between align-items-center py-3" onClick="GoToChats()">
+        <div class="d-flex align-items-center">
+        <img src="/icons/placeholder_4.png" alt="User" class="chat-avatar me-3 rounded-circle" />
+          <div>
+            <strong>Rooftop Jam Crew</strong>
+            <p class="text-muted small mb-0">Can't wait to see everyone at the...</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-end text-end">
+  <small class="text-muted mb-1">4:17 PM</small>
+  <div class="bg-danger text-white rounded-circle d-flex justify-content-center align-items-center fw-bold"
+       style="width: 20px; height: 20px; font-size: 0.7rem;">
+    2
+  </div>
+</div>
+      </div>
+
+      <!-- Repeat this block for other chat groups -->
+      <div class="chat-item d-flex justify-content-between align-items-center py-3" onClick="GoToChats()">
+        
+        <div class="d-flex align-items-center">
+        <img src="/icons/placeholder_5.png" alt="User" class="chat-avatar me-3 rounded-circle" />
+          <div>
+            <strong>Open Mic Squad</strong>
+            <p class="text-muted small mb-0">Heading to the rooftop jam?</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-end text-end">
+  <small class="text-muted mb-1">4:17 PM</small>
+  <div class="bg-danger text-white rounded-circle d-flex justify-content-center align-items-center fw-bold"
+       style="width: 20px; height: 20px; font-size: 0.7rem;">
+    3
+  </div>
+</div>
+      </div>
+      
+      <div class="chat-item d-flex justify-content-between align-items-center py-3" onClick="GoToChats()">
+        <div class="d-flex align-items-center">
+        <img src="/icons/placeholder_6.png" alt="User" class="chat-avatar me-3 rounded-circle" />
+          <div>
+            <strong>Startup Mixer Group</strong>
+            <p class="text-muted small mb-0">Should we meet 15 mins early?</p>
+          </div>
+        </div>
+        <div class="text-end">
+          <small class="text-muted">4:17 PM</small>
+        </div>
+      </div>
+      
+      <div class="chat-item d-flex justify-content-between align-items-center py-3" onClick="GoToChats()">
+        <div class="d-flex align-items-center">
+        <img src="/icons/placeholder_7.png" alt="User" class="chat-avatar me-3 rounded-circle" />
+          <div>
+            <strong>Karaoke</strong>
+            <p class="text-muted small mb-0">Bringing snacks for the group tonight 🍿</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-end text-end">
+  <small class="text-muted mb-1">4:17 PM</small>
+  
+</div>
+      </div>
+      
+      <div class="chat-item d-flex justify-content-between align-items-center py-3" onClick="GoToChats()">
+        <div class="d-flex align-items-center">
+        <img src="/icons/placeholder_8.png" alt="User" class="chat-avatar me-3 rounded-circle" />
+          <div>
+            <strong>Bookworms United</strong>
+            <p class="text-muted small mb-0">Any updates on the venue change?</p>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-end text-end">
+  <small class="text-muted mb-1">4:17 PM</small>
+  
+</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Bottom Navigation -->
+  <nav class="navbar navbar-light bg-white border-top fixed-bottom">
+    <div class="container-fluid d-flex justify-content-around py-1">
+      <a href="Explore.html" class="text-center text-danger">
+        <i class="bi bi-compass fs-4"></i><br />
+      </a>
+      <a href="#" class="text-center text-dark">
+        <i class="bi bi-bell fs-4"></i><br />
+      </a>
+      <a href="#" class="text-center text-dark">
+        <i class="bi bi-gear fs-4"></i><br />
+      </a>
+      <a href="#" class="text-center text-dark">
+        <i class="bi bi-person fs-4"></i><br />
+      </a>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function backButton(){
+        window.location.href='Explore.html'
+    }
+
+    function GoToChats(){
+        window.location.href='Messages.html'
+    }
+  </script>
+</body>
+</html>
