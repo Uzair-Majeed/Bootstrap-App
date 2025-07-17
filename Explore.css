@@ -65,20 +65,6 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.navbar.fixed-bottom {
-  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar a {
-  text-decoration: none;
-  font-size: 0.75rem;
-}
-
-.navbar a.active i,
-.navbar a.active small {
-  color: #C20001;
-}
-
 /* Modal Styling */
 .glass-bg {
   background: rgba(255, 255, 255, 0.6);
@@ -86,6 +72,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* Navigation */
 /* Navigation */
 .navbar.fixed-bottom {
   box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
@@ -96,9 +83,18 @@ body {
   font-size: 0.75rem;
 }
 
-.navbar a.text-danger i {
-  color: #C20001 !important;
+.navbar a img {
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
+
+.navbar a.active img {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(92%) saturate(5471%) hue-rotate(356deg) brightness(88%) contrast(124%);
+  opacity: 1;
+}
+
+
+
+
 
 
 .modal-70 {
