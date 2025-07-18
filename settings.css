@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('./fonts/BricolageGrotesque.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* Header Section */
+.settings-header {
+    background: linear-gradient(to bottom, #C20001, #5C0000);
+}
+
+.user-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.edit-profile-link {
+    color: #fff;
+    font-size: 0.85rem;
+    text-decoration: underline;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Drag Handle */
+.drag-handle {
+    width: 40px;
+    height: 4px;
+    background-color: #FF4400;
+    border-radius: 5px;
+}
+
+/* Scrollable Settings Content */
+.settings-content {
+    color:#521600;
+    background: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-bottom: 10px; /* prevent hiding behind navbar */
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    
+    margin-top: -15px;   /* Pulls it up over header */
+    position: relative;
+    z-index: 2;     
+}
+
+.settings-content::-webkit-scrollbar {
+    display: none;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* Settings Items */
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.settings-item {
+    background-color: #fff0eb;
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.settings-item:hover {
+    background-color: #ffe5dc;
+    cursor: pointer;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Bottom Navbar */
+.navbar.fixed-bottom {
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a.active img {
+    filter: brightness(0) saturate(100%) invert(14%) sepia(92%) saturate(5471%) hue-rotate(356deg) brightness(88%) contrast(124%);
+    opacity: 1;
+}
+
+.settings-options {
+    background: #FFF0EB;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 5px 0 15px;
+    font-size: 0.95rem;
+}
+
+.option-row {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.option-row:last-child {
+    border-bottom: none;
+}
+
+.toggle-switch:checked {
+    background-color: #C20001 !important;
+    border-color: #C20001 !important;
+}
+
+.toggle-switch {
+    background-color: #D6CAC5 !important;
+    border-color: black !important;
+}
+.form-check-input:focus {
+    outline: none;
+    box-shadow: none;
+}
