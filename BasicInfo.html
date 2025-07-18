@@ -42,26 +42,23 @@
       </select>
     </div>
 
-    <button type="submit" class="btn w-100 save-btn btn-danger rounded-pill">Save</button>
+    <button type="submit" class="btn w-100 save-btn btn-danger">Save</button>
   </form>
 </div>
 
 <!-- Toasts -->
-<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
-  <div id="errorToast" class="toast bg-danger text-white text-center" role="alert">
-    <div class="toast-body">
+<div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
+    <div id="errorToast" class="toast bg-danger text-white align-items-center" role="alert">
+      <div class="toast-body text-center">
       Please fill all fields and upload your image!
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
-  <div id="successToast" class="toast bg-success text-white text-center" role="alert">
-    <div class="toast-body">
+    <div id="successToast" class="toast bg-success text-white align-items-center" role="alert">
+      <div class="toast-body text-center">
       Saved Successfully!
+      </div>
     </div>
   </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

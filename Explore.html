@@ -1,226 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore Events</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Events</title>
 
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="Explore.css">
+    <link rel="stylesheet" href="Explore.css">
 </head>
+
 <body>
-  <div class="container-fluid min-vh-100 d-flex flex-column">
-    <div class="flex-grow-1 overflow-auto px-3 pt-4 pb-5">
-      <h5>Hello Kamil 👋</h5>
-      <div class="d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">Let's find event near you</h4>
-        <a href='Chats.html'class="btn p-0"><img src="/icons/chats.svg" alt="chat"></a>
-      </div>
-
-      <!-- Event Card -->
-      <div class="card mt-3 event-card text-white">
-        <div class="position-relative">
-          <img src="/icons/post_Img.png" class="img-fluid w-100 event-img" alt="Tomorrowland Event" />
-          <div class="event-date text-center">
-            <strong>25</strong><br />May
-          </div>
-          <div class="overlay-content p-3">
-           <div onClick="showEventDetailModal()">
-  <h5 class="card-title mb-1">Tomorrowland</h5>
-  <p class="card-text small">Lake View Park, Islamabad</p>
-</div>
-
-
-            <div class="event-actions">
-              <button onclick="likeEvent(this)"><i class="bi bi-heart"></i></button>
-              <button data-bs-toggle="modal" data-bs-target="#commentsModal"><i class="bi bi-chat-dots"></i></button>
-              <button><i class="bi bi-send"></i></button>
+    <div class="container-fluid min-vh-100 d-flex flex-column">
+        <div class="flex-grow-1 overflow-auto px-3 pt-4 pb-5">
+            <h5>Hello Kamil 👋</h5>
+            <div class="d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">Let's find event near you</h4>
+                <a href='Chats.html' class="btn p-0"><img src="/icons/chats.svg" alt="chat"></a>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Duplicate Event Card -->
-      <div class="card mt-3 event-card text-white">
-        <div class="position-relative">
-          <img src="/icons/post_Img.png" class="img-fluid w-100 event-img" alt="Tomorrowland Event" />
-          <div class="event-date text-center">
-            <strong>25</strong><br />May
-          </div>
-          <div class="overlay-content p-3">
-            <div onClick="showEventDetailModal()">
-  <h5 class="card-title mb-1">Tomorrowland</h5>
-  <p class="card-text small">Lake View Park, Islamabad</p>
-</div>
+            <!-- Event Card -->
+            <div class="card mt-3 event-card text-white">
+                <div class="position-relative">
+                    <img src="/icons/post_Img.png" class="img-fluid w-100 event-img" alt="Tomorrowland Event" />
+                    <div class="event-date text-center">
+                        <strong>25</strong>
+                        <br />May
+                    </div>
+                    <div class="overlay-content p-3">
+                        <img src="/icons/placeholder_1.png" alt="pic" style="width: 45px;" data-bs-toggle="modal" data-bs-target="#profileModal">
+                        <div onClick="showEventDetailModal()">
+                            <h5 class="card-title mb-1">Tomorrowland</h5>
+                            <p class="card-text small">Lake View Park, Islamabad</p>
+                        </div>
 
-            <div class="event-actions">
-              <button onclick="likeEvent(this)"><i class="bi bi-heart"></i></button>
-              <button data-bs-toggle="modal" data-bs-target="#commentsModal"><i class="bi bi-chat-dots"></i></button>
-              <button><i class="bi bi-send"></i></button>
+
+                        <div class="event-actions">
+                            <button onclick="likeEvent(this)">
+                                <img src="/icons/Like.svg" alt="like" class="like-btn">
+                                <br />
+                            </button>
+                            <button data-bs-toggle="modal" data-bs-target="#commentsModal">
+                                <img src="/icons/Comments.svg" alt="comments">
+                                <br />
+                            </button>
+                            <button data-bs-toggle="modal" data-bs-target="#shareModal">
+                                <img src="/icons/Share.svg" alt="share">
+                                <br />
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Duplicate Event Card -->
+            <div class="card mt-3 event-card text-white">
+                <div class="position-relative">
+                    <img src="/icons/post_Img.png" class="img-fluid w-100 event-img" alt="Tomorrowland Event" />
+                    <div class="event-date text-center">
+                        <strong>25</strong>
+                        <br />May
+                    </div>
+                    <div class="overlay-content p-3">
+
+                        <img src="/icons/placeholder_1.png" alt="pic" style="width: 45px;" data-bs-toggle="modal" data-bs-target="#profileModal">
+                        <div onClick="showEventDetailModal()">
+                            <h5 class="card-title mb-1">Tomorrowland</h5>
+                            <p class="card-text small">Lake View Park, Islamabad</p>
+                        </div>
+
+                        <div class="event-actions">
+                            <button onclick="likeEvent(this)">
+                                <img src="/icons/Like.svg" alt="like" class="like-btn">
+                                <br />
+                            </button>
+                            <button data-bs-toggle="modal" data-bs-target="#commentsModal">
+                                <img src="/icons/Comments.svg" alt="comments">
+                                <br />
+                            </button>
+                            <button data-bs-toggle="modal" data-bs-target="#shareModal">
+                                <img src="/icons/Share.svg" alt="share">
+                                <br />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- Comments Modal -->
-  <div class="modal fade comments-modal" id="commentsModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-70 modal-slide-up draggable-modal m-0">
-      <div class="modal-content glass-bg border-0 rounded-top-4 h-100">
-        <div class="modal-handle"></div>
-        <div class="modal-header border-0 pt-2">
-          <h5 class="modal-title">Comments</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body overflow-auto">
-          <div class="comment-item d-flex align-items-start pb-3 mb-3 border-bottom">
-            <img src="https://i.pravatar.cc/40?img=1" class="avatar me-2" />
-            <div class="w-100">
-              <strong>Ayesha</strong> <small class="text-muted">3 min ago</small>
-              <p class="mb-1">Can’t wait for the rooftop jam tonight! Who else is coming?</p>
-              <button onclick="likeComment(this)" class="btn p-0">
-                <i class="bi bi-heart"></i>
-              </button>
-              <small class="text-muted ms-1">24</small>
+    <!-- Comments Modal -->
+    <div class="modal fade comments-modal" id="commentsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-70 modal-slide-up draggable-modal m-0">
+            <div class="modal-content glass-bg border-0 rounded-top-4 h-100">
+                <div class="modal-handle"></div>
+                <div class="modal-header border-0 pt-2">
+                    <h5 class="modal-title">Comments</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body overflow-auto" id="commentsContainer">
+                    <div class="comment-item d-flex align-items-start pb-3 mb-3 border-bottom">
+                        <img src="https://i.pravatar.cc/40?img=1" class="avatar me-2" />
+                        <div class="w-100">
+                            <strong>Ayesha</strong> <small class="text-muted">3 min ago</small>
+                            <p class="mb-1">Can’t wait for the rooftop jam tonight! Who else is coming?</p>
+                            <button onclick="likeComment(this)" class="btn p-0">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                            <small class="text-muted ms-1">24</small>
+                        </div>
+                    </div>
+                    <div class="comment-item d-flex align-items-start pb-3 mb-3 border-bottom">
+                        <img src="https://i.pravatar.cc/40?img=2" class="avatar me-2" />
+                        <div class="w-100">
+                            <strong>Zara</strong> <small class="text-muted">5 min ago</small>
+                            <p class="mb-1">Ready for the event! Who else is coming?</p>
+                            <button onclick="likeComment(this)" class="btn p-0">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                            <small class="text-muted ms-1">3</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-input px-3 py-2 glass-bg border-top">
+                    <div class="input-group align-items-center">
+                        <input type="text" class="form-control" id="commentsInput" placeholder="Write a Comment..." />
+                        <button class="btn me-2" type="button" onclick="sendComment()">
+                            <img src="/icons/send.svg" alt="send">
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="comment-item d-flex align-items-start pb-3 mb-3 border-bottom">
-            <img src="https://i.pravatar.cc/40?img=2" class="avatar me-2" />
-            <div class="w-100">
-              <strong>Zara</strong> <small class="text-muted">5 min ago</small>
-              <p class="mb-1">Ready for the event! Who else is coming?</p>
-              <button onclick="likeComment(this)" class="btn p-0">
-                <i class="bi bi-heart"></i>
-              </button>
-              <small class="text-muted ms-1">3</small>
+        </div>
+    </div>
+
+    <!-- Ticket Modal -->
+    <div class="modal fade" id="eventDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-70 modal-slide-up draggable-modal m-0">
+            <div class="modal-content glass-bg border-0 rounded-top-4 h-100 p-3 px-4">
+                <div class="modal-handle"></div>
+                <div class="modal-body overflow-auto">
+
+                    <!-- Title + People Joined -->
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold mb-1">Tomorrowland</h4>
+                        <p class="text-muted small mb-2">
+                            <span class="text-danger fw-bold">983</span> people have joined
+                            <a href="#" class="text-decoration-none text-danger small">View All</a>
+                        </p>
+                    </div>
+
+                    <!-- Description with Read More -->
+                    <p id="event-description" class="small text-muted mb-1 collapsed">
+                        Step into a world of music, magic, and unforgettable memories! Join thousands of dreamers at Tomorrowland Pakistan 2025, where global DJs light up the night with spectacular performances. Experience electrifying visuals, immersive stages, and a vibe like
+                        no other. Dance under the stars and be part of something legendary.
+                    </p>
+
+                    <a href="javascript:void(0);" class="text-danger fw-semibold" id="readMoreBtn" onclick="toggleReadMore()">Read More</a>
+
+
+                    <!-- Tickets -->
+                    <div class="bg-light rounded-3 p-3 my-3 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1" style="color: black;"><strong>Tickets</strong></h5>
+                            <p class="mb-0" style="color: #C20001;">PKR 1500 - 5000</p>
+                        </div>
+
+                        <img src="/icons/arrow_right.svg" alt="Go" class="arrow-icon" style="width: 24px;">
+                    </div>
+
+
+                    <!-- Location -->
+
+                    <div class="bg-light rounded-3 p-3 my-3 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1" style="color: black;"><strong>Location</strong></h5>
+                            <p class="mb-0" style="color: #C20001;">Lake View Park, Islamabad</p>
+                        </div>
+
+                        <img src="/icons/arrow_right.svg" alt="Go" class="arrow-icon" style="width: 24px;">
+                    </div>
+
+                    <!-- Date & Time -->
+
+                    <div class="bg-light rounded-3 p-3 my-3 d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-1" style="color: black;"><strong>Date & Time</strong></h5>
+                            <p class="mb-0" style="color: #C20001;">May 16, 2025 – 7:30 PM to 10:30 PM</p>
+                        </div>
+
+                        <img src="/icons/calendar.svg" alt="Go" class="arrow-icon" style="width: 24px;">
+                    </div>
+                    <!-- Button -->
+                    <div class="d-grid mt-4">
+                        <button class="btn btn-danger rounded-pill py-2">Buy Ticket</button>
+                    </div>
+
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  
-<!-- Ticket Modal --><div class="modal fade" id="eventDetailModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-70 modal-slide-up draggable-modal m-0">
-    <div class="modal-content glass-bg border-0 rounded-top-4 h-100 p-3 px-4">
-      <div class="modal-handle"></div>
-      <div class="modal-body overflow-auto">
 
-        <!-- Title + People Joined -->
-        <div class="text-center mb-4">
-          <h4 class="fw-bold mb-1">Tomorrowland</h4>
-          <p class="text-muted small mb-2">
-            <span class="text-danger fw-bold">983</span> people have joined
-          <a href="#" class="text-decoration-none text-danger small">View All</a>
-          </p>
+    <!-- Share Modal -->
+
+    <div class="modal fade share-modal" id="shareModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog share-dialog modal-70 modal-slide-up draggable-modal m-0" style="height: 40vh;">
+            <div class="modal-content share-content glass-bg border-0 rounded-top-4 h-100">
+                <div class="modal-handle"></div>
+                <div class="modal-header border-0 pt-2">
+                    <h5 class="modal-title">Share Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body overflow-auto share-body" id="shareContainer">
+
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn btn-outline-light text-dark fw-semibold share-copy-btn" onclick="copyEventLink()">
+                            <i class="bi bi-link-45deg me-2"></i>Copy Link
+                        </button>
+                    </div>
+
+                    <div class="d-flex flex-wrap justify-content-center share-platforms">
+                        <button class="btn  p-2 share-btn">
+                            <img src="/icons/facebook.svg" alt="Facebook" width="24">
+                        </button>
+                        <button class="btn  p-2 share-btn">
+                            <img src="/icons/whatsapp.svg" alt="WhatsApp" width="24">
+                        </button>
+                        <button class="btn  p-2 share-btn">
+                            <img src="/icons/twitter.svg" alt="Twitter/X" width="24">
+                        </button>
+                        <button class="btn  p-2 share-btn">
+                            <img src="/icons/instagram.svg" alt="Instagram" width="24">
+                        </button>
+
+                        <button class="btn  p-2 share-btn">
+                            <img src="/icons/tiktok.svg" alt="Instagram" width="24">
+                        </button>
+                        <button class="btn  p-2 share-btn">
+                            <img src="/icons/linked_In.svg" alt="Instagram" width="24">
+                        </button>
+
+                        <button class="btn  p-2 share-btn">
+                            <img src="/icons/more.svg" alt="More" width="24">
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Description with Read More -->
-        <p id="event-description" class="small text-muted mb-4">
-          Step into a world of music, magic, and unforgettable memories! Join thousands of dreamers at Tomorrowland Pakistan 2025, where global DJs 
-          <span id="dots">...</span>
-          <span id="more" style="display: none;">
-            light up the night with spectacular performances. Experience electrifying visuals, immersive stages, and a vibe like no other. Dance under the stars and be part of something legendary.
-          </span>
-          <a href="javascript:void(0);" class="text-danger fw-semibold" id="readMoreBtn" onclick="toggleReadMore()">Read More</a>
-        </p>
-
-        <!-- Tickets -->
-        <div class="bg-light rounded-3 p-3 my-3">
-          <h5 class="mb-1" style="color: black;"><strong>Tickets</strong></h5>
-          <p class="mb-0" style="color: #C20001;">PKR 1500 - 5000</p>
-        </div>
-
-        <!-- Location -->
-        <div class="bg-light rounded-3 p-3 my-3">
-          <h5 class="mb-1" style="color: black;"><strong>Location</strong></h5>
-          <p class="mb-0" style="color: #C20001;">Lake View Park, Islamabad</p>
-        </div>
-
-        <!-- Date & Time -->
-        <div class="bg-light rounded-3 p-3 my-3">
-          <h5 class="mb-1" style="color: black;"><strong>Date & Time</strong></h5>
-          <p class="mb-0" style="color: #C20001;">May 16, 2025 – 7:30 PM to 10:30 PM</p>
-        </div>
-
-        <!-- Button -->
-        <div class="d-grid mt-4">
-          <button class="btn btn-danger rounded-pill py-2">Buy Ticket</button>
-        </div>
-
-      </div>
     </div>
-  </div>
-</div>
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-70 modal-slide-up draggable-modal m-0">
+            <div class="modal-content glass-bg border-0 rounded-top-4 h-100 p-3 px-4">
+                <div class="modal-handle"></div>
+                <div class="modal-body overflow-auto text-center pb-4">
+
+                    <!-- Profile Picture -->
+                    <img src="/icons/placeholder_6.png" class="rounded-circle mb-2 shadow-sm" style="width: 90px; height: 90px;" alt="Profile Picture">
+
+                    <!-- Name -->
+                    <h5 class="fw-bold mb-1">John Doe</h5>
+
+                    <!-- Short Bio -->
+                    <p class="text-muted small mb-3">Event organizer, music enthusiast, and adventure seeker.</p>
+
+                    <!-- Grid Buttons -->
+                    <div class="row text-center g-2 mb-4">
+                        <div class="col-6">
+                            <button id="followBtn" onclick="toggleFollow()" class="btn btn-outline-danger rounded-pill w-100 small py-2">Follow</button>
+
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-outline-danger rounded-pill w-100 small py-2" onClick="GoToChats()">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Grid -->
+                    <div class="portfolio-grid">
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-1.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-2.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-3.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-4.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-5.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-6.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-1.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-2.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                            <div class="col-4">
+                                <img src="/icons/placeholder_imgs/image-3.svg" class="img-fluid rounded shadow-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-  <!-- Bottom Navigation -->
-   <nav class="navbar navbar-light bg-white border-top fixed-bottom">
-  <div class="container-fluid d-flex justify-content-around py-1">
-    <a href="Explore.html" class="text-center active">
-      <img src="/icons/events.svg" alt="event"><br />
-    </a>
-    <a href="#" class="text-center">
-      <img src="/icons/Bell.svg" alt="bell"><br />
-    </a>
-    <a href="#" class="text-center">
-      <img src="/icons/Tuning.svg" alt="tuning"><br />
-    </a>
-    <a href="#" class="text-center">
-      <img src="/icons/profile.svg" alt="profile"><br />
-    </a>
-  </div>
-</nav>
 
 
-  <!-- Script -->
-  <script>
-    function likeEvent(btn) {
-      const icon = btn.querySelector('i');
-      icon.classList.toggle('bi-heart');
-      icon.classList.toggle('bi-heart-fill');
-      icon.classList.toggle('text-danger');
-    }
+    <!-- Bottom Navigation -->
+    <nav class="navbar navbar-light bg-white border-top fixed-bottom">
+        <div class="container-fluid d-flex justify-content-around py-1">
+            <a href="Explore.html" class="text-center active">
+                <img src="/icons/events.svg" alt="event">
+                <br />
+            </a>
+            <a href="Search.html" class="text-center">
+                <img src="/icons/search.svg" alt="search">
+                <br/>
+            </a>
+            <a href="Notifications.html" class="text-center">
+                <img src="/icons/Bell.svg" alt="bell">
+                <br />
+            </a>
+            <a href="Settings.html" class="text-center">
+                <img src="/icons/Tuning.svg" alt="tuning">
+                <br />
+            </a>
+            <a href="Profile.html" class="text-center">
+                <img src="/icons/profile.svg" alt="profile">
+                <br />
+            </a>
+        </div>
+    </nav>
 
-    function likeComment(btn) {
-      const icon = btn.querySelector('i');
-      const countEl = btn.nextElementSibling;
-      const isLiked = icon.classList.toggle('bi-heart-fill');
-      icon.classList.toggle('bi-heart', !isLiked);
-      icon.classList.toggle('text-danger', isLiked);
-      const count = parseInt(countEl.textContent);
-      countEl.textContent = isLiked ? count + 1 : count - 1;
-    }
 
-  function toggleReadMore() {
-    const dots = document.getElementById("dots");
-    const moreText = document.getElementById("more");
-    const btn = document.getElementById("readMoreBtn");
+    <!-- Toast container -->
 
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      moreText.style.display = "none";
-      btn.textContent = "Read More";
+    <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
+        <div id="successToast" class="toast bg-success text-white align-items-center" role="alert">
+            <div class="toast-body text-center">
+                Link copied to clipboard!
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const successToast = new bootstrap.Toast(document.getElementById('successToast'), {
+            delay: 2000,
+            autohide: true
+          });
+        
+          function GoToChats(){
+            window.location.href='Chats.html';
+          }
+        function copyEventLink() {
+          const dummyLink = 'https://your-event-url.com';
+          navigator.clipboard.writeText(dummyLink).then(() => {
+            
+              successToast.show();
+          });
+        }
+        
+            function likeComment(btn) {
+              const icon = btn.querySelector('i');
+              const countEl = btn.nextElementSibling;
+              const isLiked = icon.classList.toggle('bi-heart-fill');
+              icon.classList.toggle('bi-heart', !isLiked);
+              icon.classList.toggle('text-danger', isLiked);
+              const count = parseInt(countEl.textContent);
+              countEl.textContent = isLiked ? count + 1 : count - 1;
+            }
+        
+            function likeEvent(btn) {
+          const icon = btn.querySelector('img');
+          
+          if (icon.src.includes('Like.svg')) {
+            icon.src = '/icons/Liked.svg';
+          } else {
+            icon.src = '/icons/Like.svg';
+          }
+        }
+        
+        function sendComment() {
+          const input = document.getElementById('commentsInput');
+          const message = input.value.trim();
+          if (!message) return; 
+        
+          const commentsContainer = document.getElementById('commentsContainer');
+        
+          const commentHTML = `
+            <div class="comment-item d-flex align-items-start pb-3 mb-3 border-bottom">
+              <img src="https://i.pravatar.cc/40?img=3" class="avatar me-2" />
+              <div class="w-100">
+                <strong>You</strong> <small class="text-muted">Just now</small>
+                <p class="mb-1">${message}</p>
+                <button onclick="likeComment(this)" class="btn p-0">
+                  <i class="bi bi-heart"></i>
+                </button>
+                <small class="text-muted ms-1">0</small>
+              </div>
+            </div>
+          `;
+        
+          commentsContainer.insertAdjacentHTML('afterbegin', commentHTML);
+        
+          input.value = ''; 
+        }
+        function toggleFollow() {
+    const btn = document.getElementById('followBtn');
+    const isFollowing = btn.textContent.trim() === 'Following';
+
+    if (isFollowing) {
+      btn.textContent = 'Follow';
+      btn.classList.remove('btn-danger');
+      btn.classList.add('btn-outline-danger');
     } else {
-      dots.style.display = "none";
-      moreText.style.display = "inline";
-      btn.textContent = "Read Less";
+      btn.textContent = 'Following';
+      btn.classList.remove('btn-outline-danger');
+      btn.classList.add('btn-danger');
     }
   }
+          function toggleReadMore() {
+          const desc = document.getElementById("event-description");
+          const btn = document.getElementById("readMoreBtn");
+        
+          if (desc.classList.contains("collapsed")) {
+            desc.classList.remove("collapsed");
+            btn.textContent = "Read Less";
+          } else {
+            desc.classList.add("collapsed");
+            btn.textContent = "Read More";
+          }
+        }
+        
+          function showEventDetailModal() {
+          const eventDetailModal = new bootstrap.Modal(document.getElementById('eventDetailModal'));
+          eventDetailModal.show();
+        }
+        
+        (() => {
+          const dialogEl = document.querySelector('#eventDetailModal .draggable-modal');
+          const contentEl = dialogEl.querySelector('.modal-content');
+          const modal = document.getElementById('eventDetailModal');
+        
+          let startY = 0, deltaY = 0, isDragging = false;
+        
+          contentEl.addEventListener('touchstart', e => {
+            if (e.touches.length !== 1) return;
+            startY = e.touches[0].clientY;
+            deltaY = 0;
+            isDragging = true;
+            contentEl.style.transition = 'none';
+          });
+        
+          contentEl.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            deltaY = e.touches[0].clientY - startY;
+            if (deltaY > 0) contentEl.style.transform = `translateY(${deltaY}px)`;
+          });
+        
+          contentEl.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            contentEl.style.transition = 'transform 0.3s ease-out';
+            if (deltaY > 100) {
+              contentEl.style.transform = `translateY(100%)`;
+              setTimeout(() => bootstrap.Modal.getInstance(modal)?.hide(), 300);
+            } else {
+              contentEl.style.transform = `translateY(0%)`;
+            }
+          });
+        
+          modal.addEventListener('hidden.bs.modal', () => {
+            contentEl.style.transition = 'none';
+            contentEl.style.transform = 'translateY(100%)';
+          });
+        
+          modal.addEventListener('shown.bs.modal', () => {
+            requestAnimationFrame(() => {
+              contentEl.style.transition = 'transform 0.3s ease-out';
+              contentEl.style.transform = 'translateY(0%)';
+            });
+          });
+        })();
+        
+        (() => {
+          const dialogEl = document.querySelector('#shareModal .draggable-modal');
+          const contentEl = dialogEl.querySelector('.modal-content');
+          const modal = document.getElementById('shareModal');
+        
+          let startY = 0, deltaY = 0, isDragging = false;
+        
+          contentEl.addEventListener('touchstart', e => {
+            if (e.touches.length !== 1) return;
+            startY = e.touches[0].clientY;
+            deltaY = 0;
+            isDragging = true;
+            contentEl.style.transition = 'none';
+          });
+        
+          contentEl.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            deltaY = e.touches[0].clientY - startY;
+            if (deltaY > 0) contentEl.style.transform = `translateY(${deltaY}px)`;
+          });
+        
+          contentEl.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            contentEl.style.transition = 'transform 0.3s ease-out';
+            if (deltaY > 100) {
+              contentEl.style.transform = `translateY(100%)`;
+              setTimeout(() => bootstrap.Modal.getInstance(modal)?.hide(), 300);
+            } else {
+              contentEl.style.transform = `translateY(0%)`;
+            }
+          });
+        
+          modal.addEventListener('hidden.bs.modal', () => {
+            contentEl.style.transition = 'none';
+            contentEl.style.transform = 'translateY(100%)';
+          });
+        
+          modal.addEventListener('shown.bs.modal', () => {
+            requestAnimationFrame(() => {
+              contentEl.style.transition = 'transform 0.3s ease-out';
+              contentEl.style.transform = 'translateY(0%)';
+            });
+          });
+        })();
+        
+            (() => {
+              const dialogEl = document.querySelector('.draggable-modal');
+              const contentEl = dialogEl.querySelector('.modal-content');
+              const modal = document.getElementById('commentsModal');
+        
+              let startY = 0, deltaY = 0, isDragging = false;
+        
+              contentEl.addEventListener('touchstart', e => {
+                if (e.touches.length !== 1) return;
+                startY = e.touches[0].clientY;
+                deltaY = 0;
+                isDragging = true;
+                contentEl.style.transition = 'none';
+              });
+        
+              contentEl.addEventListener('touchmove', e => {
+                if (!isDragging) return;
+                deltaY = e.touches[0].clientY - startY;
+                if (deltaY > 0) contentEl.style.transform = `translateY(${deltaY}px)`;
+              });
+        
+              contentEl.addEventListener('touchend', () => {
+                if (!isDragging) return;
+                isDragging = false;
+                contentEl.style.transition = 'transform 0.3s ease-out';
+                if (deltaY > 100) {
+                  contentEl.style.transform = `translateY(100%)`;
+                  setTimeout(() => bootstrap.Modal.getInstance(modal)?.hide(), 300);
+                } else {
+                  contentEl.style.transform = `translateY(0%)`;
+                }
+              });
+        
+              modal.addEventListener('hidden.bs.modal', () => {
+                contentEl.style.transition = 'none';
+                contentEl.style.transform = 'translateY(100%)';
+              });
+        
+              modal.addEventListener('shown.bs.modal', () => {
+                requestAnimationFrame(() => {
+                  contentEl.style.transition = 'transform 0.3s ease-out';
+                  contentEl.style.transform = 'translateY(0%)';
+                });
+              });
+            })();
 
-  function showEventDetailModal() {
-  const eventDetailModal = new bootstrap.Modal(document.getElementById('eventDetailModal'));
-  eventDetailModal.show();
-}
-
-(() => {
-  const dialogEl = document.querySelector('#eventDetailModal .draggable-modal');
+            (() => {
+  const dialogEl = document.querySelector('#profileModal .draggable-modal');
   const contentEl = dialogEl.querySelector('.modal-content');
-  const modal = document.getElementById('eventDetailModal');
+  const modal = document.getElementById('profileModal');
 
   let startY = 0, deltaY = 0, isDragging = false;
 
@@ -262,53 +636,7 @@
     });
   });
 })();
-
-    (() => {
-      const dialogEl = document.querySelector('.draggable-modal');
-      const contentEl = dialogEl.querySelector('.modal-content');
-      const modal = document.getElementById('commentsModal');
-
-      let startY = 0, deltaY = 0, isDragging = false;
-
-      contentEl.addEventListener('touchstart', e => {
-        if (e.touches.length !== 1) return;
-        startY = e.touches[0].clientY;
-        deltaY = 0;
-        isDragging = true;
-        contentEl.style.transition = 'none';
-      });
-
-      contentEl.addEventListener('touchmove', e => {
-        if (!isDragging) return;
-        deltaY = e.touches[0].clientY - startY;
-        if (deltaY > 0) contentEl.style.transform = `translateY(${deltaY}px)`;
-      });
-
-      contentEl.addEventListener('touchend', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        contentEl.style.transition = 'transform 0.3s ease-out';
-        if (deltaY > 100) {
-          contentEl.style.transform = `translateY(100%)`;
-          setTimeout(() => bootstrap.Modal.getInstance(modal)?.hide(), 300);
-        } else {
-          contentEl.style.transform = `translateY(0%)`;
-        }
-      });
-
-      modal.addEventListener('hidden.bs.modal', () => {
-        contentEl.style.transition = 'none';
-        contentEl.style.transform = 'translateY(100%)';
-      });
-
-      modal.addEventListener('shown.bs.modal', () => {
-        requestAnimationFrame(() => {
-          contentEl.style.transition = 'transform 0.3s ease-out';
-          contentEl.style.transform = 'translateY(0%)';
-        });
-      });
-    })();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
 </body>
+
 </html>

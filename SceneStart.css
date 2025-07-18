@@ -3,12 +3,10 @@
   src: url('./fonts/BricolageGrotesque.ttf') format('truetype');
 }
 
+/* Body Gradient Background */
 body {
   font-family: 'Bricolage Grotesque', sans-serif;
-  background-image: url('./icons/background_1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, #FF4400, #992900);
   min-height: 100vh;
   margin: 0;
   display: flex;
@@ -17,22 +15,103 @@ body {
   color: white;
 }
 
+/* Screen Content Layout */
 .start-screen-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 20px;
+  padding: 40px 0;
 }
 
 .start-screen-header {
   margin-top: 20px;
+  text-align: center;
 }
 
 .start-screen-button {
   margin-bottom: 40px;
+  padding: 40px 20px;
 }
 
 .start-screen-button button {
-  border-radius: 30px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* --- TAGS SECTION --- */
+
+/* Scrollable Row Container */
+.tag-container {
+  display: grid;
+  grid-auto-flow: column;              
+  grid-auto-columns: min-content;       /* 4 columns visible at a time */
+  grid-template-rows: repeat(4, auto);       /* 4 rows */
+  gap: 15px;
+  overflow-x: auto;
+  scrollbar-width: none;                     /* Firefox */
+  -ms-overflow-style: none;                  /* IE 10+ */
+  padding: 20px 0;
+  margin: 0;  
+  padding: 40px 10px;    
+}
+
+.tag-container::-webkit-scrollbar {
+  display: none;                             /* Chrome, Safari */
+}
+.tag-btn {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  flex: 0 0 auto; 
+  white-space: nowrap;  /* Prevent shrinking, keep buttons inline */
+}
+
+.tag-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: inherit;
+  filter: blur(1.5px);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.tag-btn:hover:not(.selected) {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.tag-btn:hover:not(.selected)::before {
+  background-color: rgba(255, 255, 255, 0.2);
+  filter: blur(0.5px);
+}
+
+.tag-btn.selected {
+  background-color: #f8f4ea;
+  color: #333;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
+              0 0 0 5px rgba(248, 244, 234, 0.3);
+  transform: translate(-5px, -5px) rotate(-3deg);
+  border-color: transparent;
+  z-index: 10;
+}
+
+.tag-btn.selected::before {
+  background-color: transparent;
+  filter: blur(0);
+  transform: scale(0);
 }

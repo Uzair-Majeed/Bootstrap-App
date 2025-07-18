@@ -15,7 +15,7 @@ body {
   background: linear-gradient(to right, #C20001, #5C0000);
   color: white;
   font-weight: bold;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .upload-btn {

@@ -17,11 +17,11 @@
 
   <form id="signup-form">
     <label class="form-label">Email</label>
-    <input type="email" class="form-control rounded-3 mb-3" placeholder="Email" required>
+    <input type="email" class="form-control rounded-3 mb-3" placeholder="Enter Your Email Address" required>
 
     <label class="form-label">Password</label>
     <div class="position-relative mb-3">
-      <input type="password" id="password" class="form-control rounded-3 pe-5 password-input" placeholder="Password" required>
+      <input type="password" id="password" class="form-control rounded-3 pe-5 password-input" placeholder="Enter Your Password" required>
       <i class="bi bi-eye eye-icon-inside" onclick="togglePassword(this)"></i>
     </div>
 
@@ -38,7 +38,7 @@
       </label>
     </div>
 
-    <button type="submit" class="btn w-100 signup-btn btn-danger rounded-pill">Sign Up</button>
+    <button type="submit" class="btn w-100 signup-btn btn-danger">Sign Up</button>
   </form>
 
   <div class="d-flex align-items-center my-2">
@@ -49,9 +49,9 @@
 
   <p class="text-center small">Login with Social Apps</p>
   <div class="d-flex justify-content-center gap-3 mb-1">
-    <img src="./icons/facebook.png" alt="Facebook" class="rounded-circle" style="width:36px;height:36px;">
-    <img src="./icons/google.png" alt="Google" class="rounded-circle" style="width:36px;height:36px;">
-    <img src="./icons/whatsapp.png" alt="WhatsApp" class="rounded-circle" style="width:36px;height:36px;">
+    <img src="./icons/facebook.svg" alt="Facebook" class="rounded-circle" style="width:36px;height:36px;">
+    <img src="./icons/google.svg" alt="Google" class="rounded-circle" style="width:36px;height:36px;">
+    <img src="./icons/whatsapp.svg" alt="WhatsApp" class="rounded-circle" style="width:36px;height:36px;">
   </div>
 
   <p class="text-center small mb-3">
@@ -59,27 +59,27 @@
     <a href="login.html" class="text-danger">Sign In</a>
   </p>
 
-  <a href="#" class="btn rounded-pill small d-block mx-auto text-center"
-     style="background-color: #ffd1c0; color: #C20001; border: none; width: 300px;">
+  <a href="#" class="btn small d-block mx-auto text-center"
+     style="background-color: #ffd1c0; color: #C20001; border: none;
+  border-radius: 10px; width: 300px;">
     I'm an Event Host — Register
   </a>
 </div>
 
 <!-- Toast container -->
 
-<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
-  <div id="errorToast" class="toast bg-danger text-white align-items-center" role="alert">
-    <div class="toast-body text-center">
-      Passwords do not match.
+ <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
+    <div id="errorToast" class="toast bg-danger text-white align-items-center" role="alert">
+      <div class="toast-body text-center">
+        Passwords do not match.
+      </div>
+    </div>
+    <div id="successToast" class="toast bg-success text-white align-items-center" role="alert">
+      <div class="toast-body text-center">
+        Sign up successful!
+      </div>
     </div>
   </div>
-  
-  <div id="successToast" class="toast bg-success text-white align-items-center" role="alert">
-    <div class="toast-body text-center">
-      Sign up successful!
-    </div>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
